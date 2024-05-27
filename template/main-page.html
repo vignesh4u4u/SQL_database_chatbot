@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style type="text/css">
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        h1 {
+            font-size: 40px;
+            color: black;
+            padding: 0px;
+            text-align: center;
+        }
+        textarea {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical;
+        }
+        .chat-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        .chat-box {
+            height: 350px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .chat-message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .bot-message {
+            background-color: #f0f0f0;
+        }
+        .user-message {
+            background-color: #e6f7ff;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .clear-btn {
+            background-color: #dc3545;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .sidebar {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            padding-top: 20px;
+            overflow-x: hidden; /* Disable horizontal scroll */
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .content {
+            margin-left: 320px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>VickyGPT</h1>
+    <div class="content">
+        <h2>Welcome to VickyGPT</h2>
+    </div>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <div class="chat-message bot-message">Welcome! How can I assist you today?</div>
+            <!-- Chat history goes here -->
+            {% for sender, message in chat_history %}
+                <div class="chat-message {{ 'user-message' if sender == 'user' else 'bot-message' }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        <form method="post" action="/send_message" class="input-group">
+            <textarea id="user-input" name="message" placeholder="Type your message..." rows="3"></textarea>
+            <button type="submit">Send</button>
+            <button type="submit" formaction="/clear_chat" class="clear-btn">Clear</button>
+        </form>
+    </div>
+    <div class="sidebar">
+        <a href="home-page.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="#clients">Clients</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</body>
+</html>
