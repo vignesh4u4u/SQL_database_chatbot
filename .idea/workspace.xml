@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a17b08d-1e13-450c-9a9a-7420db574fd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/fast_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamlit_llm/main-code.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamlit_llm/new.py" beforeDir="false" afterPath="$PROJECT_DIR$/streamlit_llm/new.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_data_base_chatbot/template/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/home-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_data_base_chatbot/template/home-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/main-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_data_base_chatbot/template/main-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_data_base_chatbot/template/services.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL_data_base_chatbot/main-code.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_data_base_chatbot/main-code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL_data_base_chatbot/template/main-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/SQL_data_base_chatbot/template/main-page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
+    <title>SQL Chat</title>
     <style type="text/css">
         body {
             background-color: white;
@@ -19,7 +19,7 @@
         textarea {
             flex: 1;
             padding: 10px;
-            border-radius: 5px;
+            border-radius: 2px;
             border: 1px solid #ccc;
             resize: vertical;
         }
@@ -94,32 +94,64 @@
             margin-left: 320px;
             padding: 0px;
         }
+        .chat-method-select {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
-    <h1>VickyGPT</h1>
-    <div class="content">
-        <h2>Welcome to VickyGPT</h2>
-    </div>
-    <div class="chat-container">
-        <div class="chat-box" id="chat-box">
-            <div class="chat-message bot-message">Welcome! How can I assist you today?</div>
-            <!-- Chat history goes here -->
-            {% for sender, message in chat_history %}
-                <div class="chat-message {{ 'user-message' if sender == 'user' else 'bot-message' }}">{{ message }}</div>
-            {% endfor %}
-        </div>
-        <form method="post" action="/send_message" class="input-group">
-            <textarea id="user-input" name="message" placeholder="Type your message..." rows="3"></textarea>
-            <button type="submit">Send</button>
-            <button type="submit" formaction="/clear_chat" class="clear-btn">Clear</button>
-        </form>
-    </div>
     <div class="sidebar">
         <a href="home-page.html">Home</a>
         <a href="services.html">Services</a>
         <a href="#clients">Clients</a>
         <a href="contact.html">Contact</a>
+        <br><br><br>
+        <label style="color:white">database name</label>
+        <input type="text" name="database name" placeholder="student log">
+        <br><br>
+        <label style="color:white">database password</label>
+        <input type="text" name="database password" placeholder="Vi@567">
+        <br><br>
+        <label style="color:white">host name</label>
+        <br><br>
+        <input type="text" name="hostname" placeholder="localhost">
+        <br><br>
+        <label style="color:white">user name</label>
+        <input type="text" name="user name" placeholder="root">
+
+    </div>
+    <div class="content">
+        <h1 style="color:blue">VickyGPT</h1>
+        <div class="chat-container">
+
+            <div class="chat-method-select">
+                <label style="color:blue">Choose Any One Chat Bot</label><br>
+                <label>
+                    <input type="checkbox" name="myselect" value="full_text">
+                    sql-chat
+                </label><br>
+                <label>
+                    document-chat
+                    <input type="file" name="files" >
+                </label><br>
+                <label>
+                    <input type="checkbox" name="myselect" value="full_text">
+                    normal-chat
+                </label><br>
+            </div>
+            <div class="chat-box" id="chat-box">
+                <div class="chat-message bot-message">Welcome to VickyGPT ! How can I assist you?</div>
+
+                {% for sender, message in chat_history %}
+                    <div class="chat-message {{ 'user-message' if sender == 'user' else 'bot-message' }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            <form method="post" action="/send_message" class="input-group">
+                <textarea id="user-input" name="message" placeholder="Type your SQL query..." rows="3"></textarea>
+                <button type="submit">Send</button>
+                <button type="submit" formaction="/clear_chat" class="clear-btn">Clear</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
